@@ -3,7 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ID Card</title>
+<title>ID Card</title><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student ID</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f4f4f4;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      padding-top: 20px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #fff;
+      padding: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #444;
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: 220px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* ID CARD */
+    .profile {
+      width: 320px;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* HEADER */
+    .id-header {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+    }
+
+    .id-header h3 {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .id-header h2 {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    /* PHOTO */
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin: 15px 0;
+      border: 3px solid #222;
+    }
+
+    /* NAME */
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* INFO */
+    .info {
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .info p {
+      margin: 8px 0;
+    }
+
+    .info span {
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #eee;
+      padding: 10px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>MyProfile</h2>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- ID CARD -->
+    <div class="profile">
+
+      <div class="id-header">
+        <h3>STUDENT ID</h3>
+        <h2>My School Name</h2>
+      </div>
+
+      <img src="profile.jpg" alt="Profile Picture">
+
+      <div class="name">
+        KALIM, JOJO ENQUILLADO
+      </div>
+
+      <div class="info">
+        <p><span>First Name:</span> JOJO</p>
+        <p><span>Middle Name:</span> ENQUILLADO</p>
+        <p><span>Last Name:</span> KALIM</p>
+        <p><span>Phone:</span> 0964-953-1290</p>
+        <p><span>Age:</span> 22</p>
+        <p><span>Birthday:</span> MAY 1, 2003</p>
+        <p><span>Place:</span> Kabankalan, Philippines</p>
+      </div>
+
+      <div class="footer">
+        ID No: 2026-00123
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
 
 <style>
 * {
