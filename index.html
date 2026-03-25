@@ -14,55 +14,61 @@
     }
 
     body {
-      display: flex;
       background: #f4f4f4;
     }
 
-    /* SIDEBAR */
-    .sidebar {
-      width: 220px;
-      height: 100vh;
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: #111;
       color: #fff;
-      padding-top: 20px;
-      position: fixed;
+      padding: 15px 20px;
     }
 
-    .sidebar h2 {
-      text-align: center;
-      margin-bottom: 20px;
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    .sidebar a {
-      display: block;
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
       color: #fff;
-      padding: 12px;
       text-decoration: none;
-      transition: 0.3s;
     }
 
-    .sidebar a:hover {
-      background: #444;
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
     }
 
     /* MAIN */
     .main {
-      margin-left: 220px;
-      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: calc(100vh - 60px);
     }
 
     /* ID CARD */
     .profile {
-      width: 320px;
+      width: 340px;
       background: #fff;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       text-align: center;
+      border: 2px solid #222;
     }
 
     /* HEADER */
@@ -70,20 +76,28 @@
       background: #222;
       color: #fff;
       padding: 15px;
+      position: relative;
+    }
+
+    .id-header img {
+      width: 40px;
+      position: absolute;
+      left: 15px;
+      top: 15px;
     }
 
     .id-header h3 {
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 1px;
     }
 
     .id-header h2 {
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 5px;
     }
 
     /* PHOTO */
-    .profile img {
+    .profile img.profile-pic {
       width: 120px;
       height: 120px;
       border-radius: 10px;
@@ -96,8 +110,8 @@
     .name {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 10px;
       letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     /* INFO */
@@ -108,11 +122,42 @@
     }
 
     .info p {
-      margin: 8px 0;
+      margin: 6px 0;
     }
 
     .info span {
       font-weight: bold;
+    }
+
+    /* EXTRA */
+    .extra {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+    }
+
+    .qr {
+      width: 70px;
+      height: 70px;
+      background: repeating-linear-gradient(
+        45deg,
+        #000,
+        #000 4px,
+        #fff 4px,
+        #fff 8px
+      );
+    }
+
+    .signature {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .signature-line {
+      border-top: 1px solid #000;
+      width: 120px;
+      margin: 5px auto;
     }
 
     /* FOOTER */
@@ -122,17 +167,46 @@
       font-size: 12px;
     }
 
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <h2>MyProfile</h2>
-    <a href="#">Home</a>
-    <a href="#">Profile</a>
-    <a href="#">Settings</a>
-    <a href="#">Logout</a>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">MyProfile</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
   </div>
 
   <!-- MAIN -->
@@ -142,33 +216,48 @@
     <div class="profile">
 
       <div class="id-header">
-        <h3>STUDENT ID</h3>
-        <h2>My School Name</h2>
+        <img src="logo.png" alt="School Logo">
+        <h3>REPUBLIC OF THE PHILIPPINES</h3>
+        <h2>MY SCHOOL NAME</h2>
       </div>
 
-      <img src="profile.jpg" alt="Profile Picture">
+      <img src="profile.jpg" class="profile-pic" alt="Profile Picture">
 
       <div class="name">
         KALIM, JOJO ENQUILLADO
       </div>
 
       <div class="info">
-        <p><span>First Name:</span> JOJO</p>
-        <p><span>Middle Name:</span> ENQUILLADO</p>
-        <p><span>Last Name:</span> KALIM</p>
+        <p><span>ID No:</span> 2026-00123</p>
+        <p><span>Course:</span> BSIT</p>
+        <p><span>Year:</span> 4th Year</p>
         <p><span>Phone:</span> 0964-953-1290</p>
-        <p><span>Age:</span> 22</p>
         <p><span>Birthday:</span> MAY 1, 2003</p>
-        <p><span>Place:</span> Kabankalan, Philippines</p>
+        <p><span>Address:</span> Kabankalan, Philippines</p>
+      </div>
+
+      <div class="extra">
+        <div class="qr"></div>
+
+        <div class="signature">
+          <div class="signature-line"></div>
+          Authorized Signature
+        </div>
       </div>
 
       <div class="footer">
-        ID No: 2026-00123
+        Valid Until: 2027
       </div>
 
     </div>
 
   </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
