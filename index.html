@@ -74,12 +74,39 @@
     }
 
     /* HEADER */
-    .id-header {
-      background: #222;
-      color: #fff;
-      padding: 15px;
-      position: relative;
-    }
+.id-header {
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LOGO */
+.id-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* TEXT CONTAINER */
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.id-header h3 {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.id-header h2 {
+  font-size: 16px;
+  margin-top: 3px;
+}
 
     /* ✅ CIRCLE LOGO */
     .id-header img {
@@ -235,11 +262,14 @@
     <!-- ID CARD -->
     <div class="profile">
 
-      <div class="id-header">
-        <img src="logo.png" alt="School Logo">
-        <h3>CENTRAL PHILIPPINES STATE UNIVERSITY</h3>
-        <h2>BSIT</h2>
-      </div>
+<div class="id-header">
+  <img src="logo.png" alt="School Logo">
+
+  <div class="header-text">
+    <h3>CENTRAL PHILIPPINES STATE UNIVERSITY</h3>
+    <h2>BSIT</h2>
+  </div>
+</div>
 
       <img src="profile.jpg" class="profile-pic" alt="Profile Picture">
 
