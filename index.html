@@ -1,159 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ID Card</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      background: #f4f4f4;
-    }
+body {
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #222;
-      color: #fff;
-      padding: 15px 20px;
-      position: relative;
-    }
+/* ID CARD */
+.id-card {
+  width: 700px;
+  height: 260px;
+  background: linear-gradient(135deg, #1e1e1e, #444);
+  color: #fff;
+  border-radius: 15px;
+  display: flex;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
+/* LEFT SIDE (PHOTO) */
+.left {
+  width: 30%;
+  text-align: center;
+  border-right: 2px solid rgba(255,255,255,0.2);
+}
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-    }
+.left img {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 3px solid #fff;
+}
 
-    .nav-links li {
-      margin-left: 20px;
-    }
+.id-number {
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-    }
+/* RIGHT SIDE */
+.right {
+  width: 70%;
+  padding-left: 20px;
+}
 
-    .menu-toggle {
-      display: none;
-      font-size: 22px;
-      cursor: pointer;
-    }
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-    /* PROFILE */
-    .profile {
-      max-width: 500px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+.header h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ccc;
+}
 
-    .profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
+.header h1 {
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
 
-    .profile h2 {
-      margin-bottom: 15px;
-    }
+/* NAME */
+.name {
+  text-align: center;
+  margin: 10px 0;
+}
 
-    .info {
-      text-align: center;
-      margin-top: 15px;
-    }
+.name h2 {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    .info p {
-      margin: 12px 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
+/* INFO GRID */
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
 
-    .info p {
-      margin: 8px 0;
-      font-size: 15px;
-    }
+.info span {
+  color: #ccc;
+  font-size: 12px;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #222;
-        width: 100%;
-        flex-direction: column;
-        display: none;
-        text-align: center;
-      }
+.barcode {
+  margin-top: 10px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    #fff 2px,
+    #fff 4px
+  );
+}
+</style>
 
-      .nav-links li {
-        margin: 15px 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">MyProfile</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+<div class="id-card">
+
+  <!-- LEFT -->
+  <div class="left">
+    <img src="profile.jpg" alt="ID Photo">
+    <div class="id-number">ID NO: 2026-00123</div>
   </div>
 
-  <!-- PROFILE -->
-  <div class="profile">
-    <img src="profile.jpg" alt="Profile Picture">
-    <h2>KALIM, JOJO ENQUILLADO </h2>
+  <!-- RIGHT -->
+  <div class="right">
+
+    <div class="header">
+      <h3>REPUBLIC OF THE PHILIPPINES</h3>
+      <h1>IDENTIFICATION CARD</h1>
+    </div>
+
+    <div class="name">
+      <h2>KALIM, JOJO ENQUILLADO</h2>
+    </div>
 
     <div class="info">
-      <p><strong>First Name:</strong> JOJO</p>
-      <p><strong>Middle Name:</strong> ENQUILLADO</p>
-      <p><strong>Last Name:</strong> KALIM</p>
-      <p><strong>Phone:</strong> 0964-953-1290</p>
-      <p><strong>Age:</strong> 22</p>
-      <p><strong>Birthday:</strong> MAY 1, 2003</p>
-      <p><strong>Place:</strong> Kabankalan, Philippines</p>
+      <div><span>First Name</span><br>JOJO</div>
+      <div><span>Last Name</span><br>KALIM</div>
+      <div><span>Middle Name</span><br>ENQUILLADO</div>
+      <div><span>Age</span><br>22</div>
+      <div><span>Phone</span><br>0964-953-1290</div>
+      <div><span>Birthday</span><br>MAY 1, 2003</div>
+      <div><span>Place</span><br>Kabankalan, Philippines</div>
     </div>
+
+    <div class="barcode"></div>
+
   </div>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
+</div>
 
 </body>
 </html>
