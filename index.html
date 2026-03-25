@@ -25,6 +25,8 @@
       background: #111;
       color: #fff;
       padding: 15px 20px;
+      position: relative;
+      z-index: 1000;
     }
 
     .logo {
@@ -79,11 +81,16 @@
       position: relative;
     }
 
+    /* ✅ CIRCLE LOGO */
     .id-header img {
       width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
       position: absolute;
       left: 15px;
       top: 15px;
+      border: 2px solid #fff;
     }
 
     .id-header h3 {
@@ -167,17 +174,18 @@
       font-size: 12px;
     }
 
-    /* RESPONSIVE */
+    /* 🔥 RESPONSIVE FIX */
     @media (max-width: 768px) {
       .nav-links {
         position: absolute;
         top: 60px;
-        right: 0;
+        left: 0;
         background: #111;
         width: 100%;
         flex-direction: column;
         display: none;
         text-align: center;
+        z-index: 999; /* 🔥 ensures it's above content */
       }
 
       .nav-links li {
@@ -190,6 +198,18 @@
 
       .nav-links.active {
         display: flex;
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
 
@@ -228,7 +248,7 @@
       </div>
 
       <div class="info">
-        <p><span>ID No:</span> 2026-00123</p>
+        <p><span>ID No:</span> 2022-1421-K</p>
         <p><span>Course:</span> BSIT</p>
         <p><span>Year:</span> 4th Year</p>
         <p><span>Phone:</span> 0964-953-1290</p>
