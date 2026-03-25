@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: #fff;
+      padding: 15px 20px;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* PROFILE */
+    .profile {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .profile h2 {
+      margin-bottom: 15px;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .info p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #222;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">MyProfile</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    <h2>Juan Dela Cruz</h2>
+
+    <div class="info">
+      <p><strong>First Name:</strong> Juan</p>
+      <p><strong>Middle Name:</strong> Santos</p>
+      <p><strong>Last Name:</strong> Dela Cruz</p>
+      <p><strong>Phone:</strong> 0912-345-6789</p>
+      <p><strong>Age:</strong> 21</p>
+      <p><strong>Birthday:</strong> January 1, 2005</p>
+      <p><strong>Place:</strong> Cebu, Philippines</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
